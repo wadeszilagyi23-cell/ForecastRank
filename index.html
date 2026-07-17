@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ForecastRank compares Day-1 maximum-temperature forecasts with the observed maximum at Toronto Pearson International Airport.">
+  <title>ForecastRank — Day-1 Maximum Temperature Accuracy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true">
+        <span class="brand-bar brand-bar-one"></span>
+        <span class="brand-bar brand-bar-two"></span>
+        <span class="brand-bar brand-bar-three"></span>
+      </div>
+      <div>
+        <p class="eyebrow">Daily forecast verification</p>
+        <h1>ForecastRank</h1>
+        <p class="subtitle">Day-1 Maximum Temperature Accuracy</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section id="notice" class="notice hidden" role="status"></section>
+
+    <section class="hero-card">
+      <div class="hero-heading">
+        <div>
+          <p class="section-label">Latest verified result</p>
+          <h2 id="location-name">Toronto Pearson International Airport</h2>
+          <p id="verification-date" class="verification-date">Loading...</p>
+        </div>
+        <span id="demo-badge" class="demo-badge hidden">DEMO DATA</span>
+      </div>
+
+      <div class="summary-grid">
+        <article class="summary-item">
+          <span class="summary-label">Observed maximum</span>
+          <strong id="actual-high" class="summary-value">—</strong>
+          <span class="summary-note">Environment and Climate Change Canada</span>
+        </article>
+
+        <article class="summary-item">
+          <span class="summary-label">Forecasts compared</span>
+          <strong id="forecast-count" class="summary-value">—</strong>
+          <span class="summary-note">Available models for this date</span>
+        </article>
+
+        <article class="summary-item">
+          <span class="summary-label">Winning error</span>
+          <strong id="winning-error" class="summary-value">—</strong>
+          <span id="winner-name" class="summary-note">Waiting for results</span>
+        </article>
+
+        <article class="summary-item">
+          <span class="summary-label">Forecast captured</span>
+          <strong id="capture-date" class="summary-value summary-value-small">—</strong>
+          <span id="capture-time" class="summary-note">Fixed daily capture</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="leaderboard-card">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Accuracy leaderboard</p>
+          <h2>Yesterday’s Day-1 Forecast Results</h2>
+        </div>
+        <p class="sort-note">Ranked by absolute error</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="leaderboard">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Agency / Model</th>
+              <th scope="col">Forecast High</th>
+              <th scope="col">Error</th>
+              <th scope="col">Accuracy</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <tr>
+              <td colspan="5" class="loading-cell">Loading ForecastRank data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="unavailable-models" class="unavailable hidden"></div>
+    </section>
+
+    <section class="legend-card">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-label">Accuracy scale</p>
+          <h2>What the coloured circles mean</h2>
+        </div>
+      </div>
+
+      <div class="legend-grid">
+        <div class="legend-item">
+          <span class="accuracy-dot dot-excellent" aria-hidden="true"></span>
+          <div><strong>Excellent</strong><span>0.0–0.5°C error</span></div>
+        </div>
+        <div class="legend-item">
+          <span class="accuracy-dot dot-very-good" aria-hidden="true"></span>
+          <div><strong>Very good</strong><span>0.6–1.0°C error</span></div>
+        </div>
+        <div class="legend-item">
+          <span class="accuracy-dot dot-good" aria-hidden="true"></span>
+          <div><strong>Good</strong><span>1.1–2.0°C error</span></div>
+        </div>
+        <div class="legend-item">
+          <span class="accuracy-dot dot-fair" aria-hidden="true"></span>
+          <div><strong>Fair</strong><span>2.1–3.0°C error</span></div>
+        </div>
+        <div class="legend-item">
+          <span class="accuracy-dot dot-poor" aria-hidden="true"></span>
+          <div><strong>Poor</strong><span>More than 3.0°C error</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-card">
+      <p class="section-label">Methodology</p>
+      <h2>How ForecastRank works</h2>
+      <p>
+        ForecastRank records each model’s forecast maximum for the following local calendar day at a fixed
+        time. After that day has passed, the stored forecast is compared with the official daily maximum
+        reported for Toronto Pearson International Airport.
+      </p>
+      <p>
+        The signed error is <strong>forecast minus observed temperature</strong>. A positive value means the
+        forecast was too warm; a negative value means it was too cool. Ranking is based on the absolute error.
+      </p>
+      <p class="source-note">
+        Forecast model data are delivered through Open-Meteo. Observed maximum-temperature data are supplied
+        by Environment and Climate Change Canada. ForecastRank compares numerical model output, not necessarily
+        the human-edited public forecast issued by each agency.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>ForecastRank</strong> — Day-1 Maximum Temperature Accuracy</p>
+    <p id="last-updated">Data update: —</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

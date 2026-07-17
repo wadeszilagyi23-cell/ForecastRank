@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "location": {
+    "name": "Toronto Pearson International Airport",
+    "city": "Toronto",
+    "province": "Ontario",
+    "country": "Canada",
+    "climate_identifier": "6158731",
+    "station_code": "YYZ",
+    "latitude": 43.677,
+    "longitude": -79.631
+  },
+  "definition": "Day-1 means the following local calendar day's maximum temperature, captured once daily at the scheduled workflow time.",
+  "forecasts": {}
+}
