@@ -1,7 +1,6 @@
 {
   "status": "ready",
-  "is_demo": true,
-  "message": "Demonstration data",
+  "is_demo": false,
   "location": {
     "name": "Toronto Pearson International Airport",
     "city": "Toronto",
@@ -12,61 +11,81 @@
     "latitude": 43.677,
     "longitude": -79.631
   },
-  "verification_date": "2026-07-16",
-  "actual_high_c": 31.0,
-  "forecast_capture_date": "2026-07-15",
-  "forecast_captured_at": "2026-07-15T12:17:00-04:00",
-  "published_at": "2026-07-17T12:17:00-04:00",
+  "verification_date": "2026-07-18",
+  "actual_high_c": 28.1,
+  "forecast_capture_date": "2026-07-17",
+  "forecast_captured_at": "2026-07-17T16:10:50-04:00",
+  "published_at": "2026-07-19T13:16:51-04:00",
   "results": [
     {
-      "rank": 1,
-      "provider_id": "ecmwf_ifs",
-      "agency": "ECMWF",
-      "model": "IFS",
-      "forecast_high_c": 31.2,
-      "error_c": 0.2,
-      "absolute_error_c": 0.2,
-      "rating": "Excellent"
+      "provider_id": "meteofrance_arpege",
+      "agency": "Météo-France",
+      "model": "ARPEGE World",
+      "forecast_high_c": 28.1,
+      "error_c": 0.0,
+      "absolute_error_c": 0.0,
+      "rating": "Excellent",
+      "rank": 1
     },
     {
-      "rank": 2,
-      "provider_id": "eccc_gem",
-      "agency": "Environment and Climate Change Canada",
-      "model": "GEM Seamless",
-      "forecast_high_c": 30.5,
-      "error_c": -0.5,
-      "absolute_error_c": 0.5,
-      "rating": "Excellent"
-    },
-    {
-      "rank": 3,
-      "provider_id": "noaa_gfs",
-      "agency": "NOAA",
-      "model": "GFS",
-      "forecast_high_c": 30.0,
-      "error_c": -1.0,
-      "absolute_error_c": 1.0,
-      "rating": "Very good"
-    },
-    {
-      "rank": 4,
       "provider_id": "dwd_icon",
       "agency": "Deutscher Wetterdienst",
       "model": "ICON Global",
-      "forecast_high_c": 29.4,
-      "error_c": -1.6,
-      "absolute_error_c": 1.6,
-      "rating": "Good"
+      "forecast_high_c": 28.2,
+      "error_c": 0.1,
+      "absolute_error_c": 0.1,
+      "rating": "Excellent",
+      "rank": 2
     },
     {
-      "rank": 5,
+      "provider_id": "ecmwf_ifs",
+      "agency": "ECMWF",
+      "model": "IFS",
+      "forecast_high_c": 27.2,
+      "error_c": -0.9,
+      "absolute_error_c": 0.9,
+      "rating": "Very good",
+      "rank": 3
+    },
+    {
+      "provider_id": "eccc_gem",
+      "agency": "Environment and Climate Change Canada",
+      "model": "GEM Seamless",
+      "forecast_high_c": 27.0,
+      "error_c": -1.1,
+      "absolute_error_c": 1.1,
+      "rating": "Good",
+      "rank": 4
+    },
+    {
       "provider_id": "jma_gsm",
       "agency": "Japan Meteorological Agency",
       "model": "GSM",
-      "forecast_high_c": 33.2,
-      "error_c": 2.2,
-      "absolute_error_c": 2.2,
-      "rating": "Fair"
+      "forecast_high_c": 24.8,
+      "error_c": -3.3,
+      "absolute_error_c": 3.3,
+      "rating": "Poor",
+      "rank": 5
+    },
+    {
+      "provider_id": "noaa_gfs",
+      "agency": "NOAA",
+      "model": "GFS",
+      "forecast_high_c": 32.3,
+      "error_c": 4.2,
+      "absolute_error_c": 4.2,
+      "rating": "Poor",
+      "rank": 6
+    },
+    {
+      "provider_id": "open_meteo_best_match",
+      "agency": "Open-Meteo",
+      "model": "Best Match",
+      "forecast_high_c": 32.3,
+      "error_c": 4.2,
+      "absolute_error_c": 4.2,
+      "rating": "Poor",
+      "rank": 6
     }
   ],
   "unavailable_models": []
