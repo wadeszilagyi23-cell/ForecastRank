@@ -11,81 +11,81 @@
     "latitude": 43.677,
     "longitude": -79.631
   },
-  "verification_date": "2026-07-18",
-  "actual_high_c": 28.1,
-  "forecast_capture_date": "2026-07-17",
-  "forecast_captured_at": "2026-07-17T16:10:50-04:00",
-  "published_at": "2026-07-19T13:16:51-04:00",
+  "verification_date": "2026-07-19",
+  "actual_high_c": 24.9,
+  "forecast_capture_date": "2026-07-18",
+  "forecast_captured_at": "2026-07-18T13:15:12-04:00",
+  "published_at": "2026-07-20T14:20:32-04:00",
   "results": [
     {
-      "provider_id": "meteofrance_arpege",
-      "agency": "Météo-France",
-      "model": "ARPEGE World",
-      "forecast_high_c": 28.1,
-      "error_c": 0.0,
-      "absolute_error_c": 0.0,
-      "rating": "Excellent",
+      "provider_id": "ecmwf_ifs",
+      "agency": "ECMWF",
+      "model": "IFS",
+      "forecast_high_c": 24.3,
+      "error_c": -0.6,
+      "absolute_error_c": 0.6,
+      "rating": "Very good",
       "rank": 1
     },
     {
       "provider_id": "dwd_icon",
       "agency": "Deutscher Wetterdienst",
       "model": "ICON Global",
-      "forecast_high_c": 28.2,
-      "error_c": 0.1,
-      "absolute_error_c": 0.1,
-      "rating": "Excellent",
-      "rank": 2
-    },
-    {
-      "provider_id": "ecmwf_ifs",
-      "agency": "ECMWF",
-      "model": "IFS",
-      "forecast_high_c": 27.2,
-      "error_c": -0.9,
-      "absolute_error_c": 0.9,
+      "forecast_high_c": 23.9,
+      "error_c": -1.0,
+      "absolute_error_c": 1.0,
       "rating": "Very good",
-      "rank": 3
+      "rank": 2
     },
     {
       "provider_id": "eccc_gem",
       "agency": "Environment and Climate Change Canada",
       "model": "GEM Seamless",
-      "forecast_high_c": 27.0,
+      "forecast_high_c": 23.8,
       "error_c": -1.1,
       "absolute_error_c": 1.1,
       "rating": "Good",
-      "rank": 4
-    },
-    {
-      "provider_id": "jma_gsm",
-      "agency": "Japan Meteorological Agency",
-      "model": "GSM",
-      "forecast_high_c": 24.8,
-      "error_c": -3.3,
-      "absolute_error_c": 3.3,
-      "rating": "Poor",
-      "rank": 5
+      "rank": 3
     },
     {
       "provider_id": "noaa_gfs",
       "agency": "NOAA",
       "model": "GFS",
-      "forecast_high_c": 32.3,
-      "error_c": 4.2,
-      "absolute_error_c": 4.2,
-      "rating": "Poor",
-      "rank": 6
+      "forecast_high_c": 23.6,
+      "error_c": -1.3,
+      "absolute_error_c": 1.3,
+      "rating": "Good",
+      "rank": 4
     },
     {
       "provider_id": "open_meteo_best_match",
       "agency": "Open-Meteo",
       "model": "Best Match",
-      "forecast_high_c": 32.3,
-      "error_c": 4.2,
-      "absolute_error_c": 4.2,
-      "rating": "Poor",
+      "forecast_high_c": 23.6,
+      "error_c": -1.3,
+      "absolute_error_c": 1.3,
+      "rating": "Good",
+      "rank": 4
+    },
+    {
+      "provider_id": "meteofrance_arpege",
+      "agency": "Météo-France",
+      "model": "ARPEGE World",
+      "forecast_high_c": 22.3,
+      "error_c": -2.6,
+      "absolute_error_c": 2.6,
+      "rating": "Fair",
       "rank": 6
+    },
+    {
+      "provider_id": "jma_gsm",
+      "agency": "Japan Meteorological Agency",
+      "model": "GSM",
+      "forecast_high_c": 22.1,
+      "error_c": -2.8,
+      "absolute_error_c": 2.8,
+      "rating": "Fair",
+      "rank": 7
     }
   ],
   "unavailable_models": []
