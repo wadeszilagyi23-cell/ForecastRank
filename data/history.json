@@ -366,5 +366,97 @@
       }
     ],
     "unavailable_models": []
+  },
+  {
+    "status": "ready",
+    "is_demo": false,
+    "location": {
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "province": "Ontario",
+      "country": "Canada",
+      "climate_identifier": "6158731",
+      "station_code": "YYZ",
+      "latitude": 43.677,
+      "longitude": -79.631
+    },
+    "verification_date": "2026-07-22",
+    "actual_high_c": 22.4,
+    "forecast_capture_date": "2026-07-21",
+    "forecast_captured_at": "2026-07-21T13:46:13-04:00",
+    "published_at": "2026-07-23T13:46:51-04:00",
+    "results": [
+      {
+        "provider_id": "dwd_icon",
+        "agency": "Deutscher Wetterdienst",
+        "model": "ICON Global",
+        "forecast_high_c": 21.9,
+        "error_c": -0.5,
+        "absolute_error_c": 0.5,
+        "rating": "Excellent",
+        "rank": 1
+      },
+      {
+        "provider_id": "meteofrance_arpege",
+        "agency": "Météo-France",
+        "model": "ARPEGE World",
+        "forecast_high_c": 21.7,
+        "error_c": -0.7,
+        "absolute_error_c": 0.7,
+        "rating": "Very good",
+        "rank": 2
+      },
+      {
+        "provider_id": "eccc_gem",
+        "agency": "Environment and Climate Change Canada",
+        "model": "GEM Seamless",
+        "forecast_high_c": 21.5,
+        "error_c": -0.9,
+        "absolute_error_c": 0.9,
+        "rating": "Very good",
+        "rank": 3
+      },
+      {
+        "provider_id": "ecmwf_ifs",
+        "agency": "ECMWF",
+        "model": "IFS",
+        "forecast_high_c": 21.1,
+        "error_c": -1.3,
+        "absolute_error_c": 1.3,
+        "rating": "Good",
+        "rank": 4
+      },
+      {
+        "provider_id": "jma_gsm",
+        "agency": "Japan Meteorological Agency",
+        "model": "GSM",
+        "forecast_high_c": 19.5,
+        "error_c": -2.9,
+        "absolute_error_c": 2.9,
+        "rating": "Fair",
+        "rank": 5
+      },
+      {
+        "provider_id": "noaa_gfs",
+        "agency": "NOAA",
+        "model": "GFS",
+        "forecast_high_c": 18.3,
+        "error_c": -4.1,
+        "absolute_error_c": 4.1,
+        "rating": "Poor",
+        "rank": 6
+      },
+      {
+        "provider_id": "open_meteo_best_match",
+        "agency": "Open-Meteo",
+        "model": "Best Match",
+        "forecast_high_c": 18.3,
+        "error_c": -4.1,
+        "absolute_error_c": 4.1,
+        "rating": "Poor",
+        "rank": 6
+      }
+    ],
+    "unavailable_models": []
   }
 ]
