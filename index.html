@@ -10,30 +10,50 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand-mark" aria-hidden="true">
-        <span class="brand-bar brand-bar-one"></span>
-        <span class="brand-bar brand-bar-two"></span>
-        <span class="brand-bar brand-bar-three"></span>
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-bar brand-bar-one"></span>
+          <span class="brand-bar brand-bar-two"></span>
+          <span class="brand-bar brand-bar-three"></span>
+        </div>
+        <div>
+          <div class="brand-title-row">
+            <h1>ForecastRank</h1>
+            <span class="version-badge">V1.1</span>
+          </div>
+          <p class="subtitle">Day-1 Maximum Temperature Accuracy</p>
+        </div>
       </div>
-      <div>
-        <p class="eyebrow">Daily forecast verification</p>
-        <h1>ForecastRank</h1>
-        <p class="subtitle">Day-1 Maximum Temperature Accuracy</p>
-      </div>
+
+      <nav class="site-nav" aria-label="ForecastRank sections">
+        <a href="#daily-results">Daily result</a>
+        <a href="#performance">7-day performance</a>
+        <a href="#methodology">Methodology</a>
+      </nav>
     </div>
   </header>
 
   <main class="page-shell">
-    <section id="notice" class="notice hidden" role="status"></section>
+    <section id="notice" class="notice hidden" role="status" aria-live="polite"></section>
 
-    <section class="hero-card">
+    <section id="daily-results" class="hero-card">
       <div class="hero-heading">
         <div>
-          <p class="section-label">Latest verified result</p>
+          <p id="result-context-label" class="section-label">Latest verified result</p>
           <h2 id="location-name">Toronto Pearson International Airport</h2>
           <p id="verification-date" class="verification-date">Loading...</p>
         </div>
-        <span id="demo-badge" class="demo-badge hidden">DEMO DATA</span>
+
+        <div class="date-control-panel">
+          <label for="date-select">View a verified date</label>
+          <div class="date-control-row">
+            <select id="date-select" aria-label="Choose a verified ForecastRank date">
+              <option>Loading dates...</option>
+            </select>
+            <button id="latest-button" class="secondary-button" type="button">Latest</button>
+          </div>
+          <span id="demo-badge" class="demo-badge hidden">DEMO DATA</span>
+        </div>
       </div>
 
       <div class="summary-grid">
@@ -66,14 +86,14 @@
     <section class="leaderboard-card">
       <div class="section-heading">
         <div>
-          <p class="section-label">Accuracy leaderboard</p>
-          <h2>Yesterday’s Day-1 Forecast Results</h2>
+          <p class="section-label">Daily accuracy leaderboard</p>
+          <h2 id="daily-table-title">Day-1 Forecast Results</h2>
         </div>
         <p class="sort-note">Ranked by absolute error</p>
       </div>
 
       <div class="table-wrap">
-        <table class="leaderboard">
+        <table class="leaderboard daily-table">
           <thead>
             <tr>
               <th scope="col">Rank</th>
@@ -92,6 +112,71 @@
       </div>
 
       <div id="unavailable-models" class="unavailable hidden"></div>
+    </section>
+
+    <section id="performance" class="performance-card">
+      <div class="section-heading performance-heading">
+        <div>
+          <p class="section-label">Model performance</p>
+          <h2>Multi-day Accuracy Rankings</h2>
+          <p id="performance-range" class="verification-date">Waiting for historical data...</p>
+        </div>
+
+        <div class="period-switch" role="group" aria-label="Choose performance period">
+          <button class="period-button active" type="button" data-period="7" aria-pressed="true">Last 7 days</button>
+          <button class="period-button" type="button" data-period="all" aria-pressed="false">All verified days</button>
+        </div>
+      </div>
+
+      <div class="performance-summary-grid">
+        <article class="performance-summary-item">
+          <span class="summary-label">Verified days</span>
+          <strong id="period-days" class="performance-value">—</strong>
+          <span class="summary-note">Days included in this ranking</span>
+        </article>
+
+        <article class="performance-summary-item">
+          <span class="summary-label">Accuracy leader</span>
+          <strong id="period-leader" class="performance-value performance-value-name">—</strong>
+          <span id="period-leader-model" class="summary-note">Lowest mean absolute error</span>
+        </article>
+
+        <article class="performance-summary-item">
+          <span class="summary-label">Best mean error</span>
+          <strong id="period-best-mae" class="performance-value">—</strong>
+          <span class="summary-note">Mean absolute error</span>
+        </article>
+
+        <article class="performance-summary-item">
+          <span class="summary-label">Most daily wins</span>
+          <strong id="period-most-wins" class="performance-value">—</strong>
+          <span id="period-win-leader" class="summary-note">Tied first-place results count</span>
+        </article>
+      </div>
+
+      <div class="table-wrap performance-table-wrap">
+        <table class="leaderboard performance-table">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Agency / Model</th>
+              <th scope="col">Mean Absolute Error</th>
+              <th scope="col">Average Bias</th>
+              <th scope="col">Daily Wins</th>
+              <th scope="col">Days Available</th>
+            </tr>
+          </thead>
+          <tbody id="performance-body">
+            <tr>
+              <td colspan="6" class="loading-cell">Calculating multi-day performance...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="performance-note">
+        Mean absolute error measures typical forecast size error regardless of direction. Average bias shows whether a model tended to forecast too warm or too cool. When models tie for first on a day, each receives a daily win.
+      </p>
     </section>
 
     <section class="legend-card">
@@ -126,28 +211,24 @@
       </div>
     </section>
 
-    <section class="method-card">
+    <section id="methodology" class="method-card">
       <p class="section-label">Methodology</p>
       <h2>How ForecastRank works</h2>
       <p>
-        ForecastRank records each model’s forecast maximum for the following local calendar day at a fixed
-        time. After that day has passed, the stored forecast is compared with the official daily maximum
-        reported for Toronto Pearson International Airport.
+        ForecastRank records each model’s forecast maximum for the following local calendar day at a fixed time. After that day has passed, the stored forecast is compared with the official daily maximum reported for Toronto Pearson International Airport.
       </p>
       <p>
-        The signed error is <strong>forecast minus observed temperature</strong>. A positive value means the
-        forecast was too warm; a negative value means it was too cool. Ranking is based on the absolute error.
+        The signed error is <strong>forecast minus observed temperature</strong>. A positive value means the forecast was too warm; a negative value means it was too cool. Daily ranking is based on absolute error. Multi-day ranking is based on mean absolute error across the selected period.
       </p>
       <p class="source-note">
-        Forecast model data are delivered through Open-Meteo. Observed maximum-temperature data are supplied
-        by Environment and Climate Change Canada. ForecastRank compares numerical model output, not necessarily
-        the human-edited public forecast issued by each agency.
+        Forecast model data are delivered through Open-Meteo. Observed maximum-temperature data are supplied by Environment and Climate Change Canada. ForecastRank compares numerical model output, not necessarily the human-edited public forecast issued by each agency.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <p><strong>ForecastRank</strong> — Day-1 Maximum Temperature Accuracy</p>
+    <p>Version 1.1</p>
     <p id="last-updated">Data update: —</p>
   </footer>
 

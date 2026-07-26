@@ -1,36 +1,33 @@
 # ForecastRank
 
-## Day-1 Maximum Temperature Accuracy
+## Day-1 Maximum Temperature Accuracy — Version 1.1
 
-ForecastRank is a free static website that compares numerical weather-model
-forecasts for Toronto Pearson International Airport with the official observed
-daily maximum temperature.
+ForecastRank is a free automated website that compares numerical weather-model forecasts for Toronto Pearson International Airport with the official observed daily maximum temperature.
 
-The website is designed to run on:
+## Version 1.1 additions
 
-- GitHub Pages for free public hosting
-- GitHub Actions for one automatic update each day
-- Open-Meteo for forecast-model data
-- Environment and Climate Change Canada for observed daily maximum temperature
+Version 1.1 keeps the original daily leaderboard and adds:
 
-No API keys are required for the initial non-commercial version.
+- A historical date selector for every verified day
+- A rolling last-7-days performance ranking
+- An all-verified-days performance option
+- Mean absolute error for each model
+- Average warm or cool forecast bias
+- Daily win counts, including tied first-place finishes
+- Days-available counts so incomplete model records remain transparent
+- A responsive navigation bar and Version 1.1 identification
+
+All Version 1.1 statistics are calculated in the browser from the existing `data/history.json` file. The daily Python updater and archived forecast data do not need to be changed.
 
 ---
 
-## What “Day-1” means in this project
+## What “Day-1” means
 
 ForecastRank defines Day-1 as:
 
-> The maximum-temperature forecast for the following local calendar day,
-> captured once at a fixed daily time.
+> The maximum-temperature forecast for the following local calendar day, captured once at a fixed daily time.
 
-The included workflow runs at **12:17 p.m. Toronto time**. During a run it:
-
-1. Saves each model’s forecast maximum for tomorrow.
-2. Looks for official ECCC observations for previously forecast dates.
-3. Calculates signed and absolute errors.
-4. Updates the leaderboard and historical data.
-5. Commits the changed data files to the GitHub repository.
+The scheduled workflow saves tomorrow’s model forecasts, retrieves official observations for completed dates, calculates signed and absolute errors, updates the history files and deploys the website.
 
 The signed error is:
 
@@ -38,15 +35,38 @@ The signed error is:
 Forecast maximum − observed maximum
 ```
 
-- Positive error: forecast was too warm.
-- Negative error: forecast was too cool.
-- Ranking uses the absolute error.
+- Positive error: the forecast was too warm.
+- Negative error: the forecast was too cool.
+- Daily ranking uses absolute error.
+- Multi-day ranking uses mean absolute error.
+
+## Multi-day statistics
+
+### Mean absolute error
+
+The average size of a model’s forecast errors, without regard to whether they were warm or cool. Lower is better.
+
+### Average bias
+
+The average signed forecast error.
+
+- Positive bias means the model tended to forecast too warm.
+- Negative bias means the model tended to forecast too cool.
+- A value near zero means little average directional bias.
+
+### Daily wins
+
+A win is recorded whenever a model has rank 1 for a verified date. If models tie for first, each receives a win.
+
+### Days available
+
+The model’s number of usable daily results divided by the number of days in the selected period.
 
 ---
 
-## Included forecast sources
+## Data sources
 
-The first version requests model data delivered through Open-Meteo:
+Forecast model data are delivered through Open-Meteo from:
 
 - Open-Meteo Best Match
 - Environment and Climate Change Canada GEM
@@ -56,123 +76,52 @@ The first version requests model data delivered through Open-Meteo:
 - Météo-France ARPEGE
 - Japan Meteorological Agency GSM
 
-These are numerical model outputs at the Toronto Pearson coordinates. They
-should not be described as identical to the human-edited public forecast
-issued by an agency or a private weather company.
+Observed daily maximum temperature comes from Environment and Climate Change Canada.
+
+These are numerical model outputs at the Toronto Pearson coordinates. They are not necessarily identical to the human-edited public forecasts issued by the agencies.
 
 ## Verification station
 
 - Station: Toronto Pearson International Airport
 - ECCC climate identifier: `6158731`
 - Station code: `YYZ`
-- Coordinates used for model forecasts: 43.677°N, 79.631°W
+- Forecast coordinates: 43.677°N, 79.631°W
 
 ---
 
-# Installation on GitHub
+## Version 1.1 upgrade
 
-## 1. Create the repository
-
-Create a new **public** GitHub repository named:
+The Version 1.1 upgrade replaces only these website files:
 
 ```text
-ForecastRank
-```
-
-Do not add a README or other starter files when creating it, because this
-package already contains them.
-
-## 2. Upload the project
-
-Upload the contents of this package to the root of the repository.
-
-Important: upload the contents, not an extra outer folder. The repository
-should show:
-
-```text
-.github/
-data/
-scripts/
-app.js
 index.html
+app.js
 styles.css
 README.md
 ```
 
-## 3. Allow the workflow to write data
+Do not replace or delete:
 
-In the repository:
+```text
+data/
+scripts/
+.github/
+```
 
-1. Open **Settings**.
-2. Select **Actions** and then **General**.
-3. Find **Workflow permissions**.
-4. Select **Read and write permissions**.
-5. Save the change.
+Those folders contain the live history, forecast archive, updater and deployment workflow.
 
-The workflow file also declares `contents: write`, but the repository setting
-must permit write access.
-
-## 4. Run the first test manually
-
-1. Open the **Actions** tab.
-2. Select **Update ForecastRank**.
-3. Select **Run workflow**.
-4. Run it from the main branch.
-
-Open the completed run and inspect the log. A successful run should capture
-forecasts for the following day and commit changes inside the `data` folder.
-
-## 5. Turn on GitHub Pages
-
-1. Open **Settings**.
-2. Select **Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the main branch and the `/ (root)` folder.
-5. Save.
-
-GitHub will display the public website address after deployment.
+After the four replacement files are committed to the main branch, the existing push-triggered GitHub Actions workflow should deploy the upgraded website automatically.
 
 ---
 
-# When the first real leaderboard appears
+## Main data files
 
-The included `data/latest.json` contains clearly labelled demonstration data so
-the layout can be viewed immediately.
+- `data/forecast_archive.json` — forecasts exactly as captured for each target date
+- `data/latest.json` — newest completed daily leaderboard
+- `data/history.json` — all completed daily verifications used by Version 1.1 statistics
+- `data/history.csv` — one row per model per verified date
 
-A real result needs this sequence:
-
-1. ForecastRank captures forecasts for a future date.
-2. That date passes.
-3. ECCC publishes the official daily maximum.
-4. A later workflow run verifies and publishes the result.
-
-The updater checks recent unverified dates on every run, so a delayed ECCC
-observation can be added automatically later.
-
----
-
-# Main data files
-
-## `data/forecast_archive.json`
-
-Stores the forecasts exactly as captured for each target date.
-
-## `data/latest.json`
-
-Contains the newest completed leaderboard displayed on the home page.
-
-## `data/history.json`
-
-Stores every completed daily verification in structured JSON.
-
-## `data/history.csv`
-
-Stores one row per model per verified date for later analysis, charting and
-mapping.
-
----
-
-# Accuracy colours
+## Accuracy colours
 
 | Absolute error | Rating | Colour |
 |---:|---|---|
@@ -182,51 +131,28 @@ mapping.
 | 2.1–3.0°C | Fair | Orange |
 | More than 3.0°C | Poor | Red |
 
-The website always includes text with each colour, so the result is not
-communicated through colour alone.
+Colour is always paired with text.
 
----
+## Local preview
 
-# Local preview
-
-Opening `index.html` directly can prevent the browser from loading the JSON
-file. View it through a local web server instead.
-
-With Python installed, open a terminal in the project folder and run:
+Run a local web server in the project folder:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then visit:
+Then open:
 
 ```text
 http://localhost:8000
 ```
 
----
+## Future versions
 
-# Future versions
+Possible later additions include:
 
-The historical files already support later additions such as:
-
-- 7-day and 30-day mean absolute error
-- warm and cool bias
-- number of daily wins
-- date selector
-- time-series graphs
+- 30-day and seasonal rankings
+- time-series performance graphs
+- minimum temperature and precipitation verification
 - multiple Canadian cities
-- Leaflet forecast-accuracy map
-
----
-
-# Data attribution
-
-Forecast model data: Open-Meteo and the originating national meteorological
-services.
-
-Observed daily maximum temperature: Environment and Climate Change Canada,
-Meteorological Service of Canada.
-
-Review the source licences and attribution requirements before using
-ForecastRank commercially.
+- a Leaflet forecast-accuracy map
