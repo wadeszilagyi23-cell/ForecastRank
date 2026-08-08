@@ -1082,7 +1082,58 @@
         }
       ],
       "unavailable": []
+    },
+    "2026-08-09": {
+      "target_date": "2026-08-09",
+      "forecast_capture_date": "2026-08-08",
+      "captured_at": "2026-08-08T12:52:47-04:00",
+      "lead_definition": "Following local calendar day (Day-1)",
+      "providers": [
+        {
+          "provider_id": "open_meteo_best_match",
+          "agency": "Open-Meteo",
+          "model": "Best Match",
+          "forecast_high_c": 28.4
+        },
+        {
+          "provider_id": "eccc_gem",
+          "agency": "Environment and Climate Change Canada",
+          "model": "GEM Seamless",
+          "forecast_high_c": 27.5
+        },
+        {
+          "provider_id": "noaa_gfs",
+          "agency": "NOAA",
+          "model": "GFS",
+          "forecast_high_c": 28.4
+        },
+        {
+          "provider_id": "ecmwf_ifs",
+          "agency": "ECMWF",
+          "model": "IFS",
+          "forecast_high_c": 27.9
+        },
+        {
+          "provider_id": "dwd_icon",
+          "agency": "Deutscher Wetterdienst",
+          "model": "ICON Global",
+          "forecast_high_c": 28.8
+        },
+        {
+          "provider_id": "meteofrance_arpege",
+          "agency": "Météo-France",
+          "model": "ARPEGE World",
+          "forecast_high_c": 28.8
+        },
+        {
+          "provider_id": "jma_gsm",
+          "agency": "Japan Meteorological Agency",
+          "model": "GSM",
+          "forecast_high_c": 24.0
+        }
+      ],
+      "unavailable": []
     }
   },
-  "last_capture_at": "2026-08-07T13:08:08-04:00"
+  "last_capture_at": "2026-08-08T12:52:47-04:00"
 }
