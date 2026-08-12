@@ -2114,5 +2114,97 @@
       }
     ],
     "unavailable_models": []
+  },
+  {
+    "status": "ready",
+    "is_demo": false,
+    "location": {
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "province": "Ontario",
+      "country": "Canada",
+      "climate_identifier": "6158731",
+      "station_code": "YYZ",
+      "latitude": 43.677,
+      "longitude": -79.631
+    },
+    "verification_date": "2026-08-11",
+    "actual_high_c": 29.0,
+    "forecast_capture_date": "2026-08-10",
+    "forecast_captured_at": "2026-08-10T13:09:26-04:00",
+    "published_at": "2026-08-12T13:13:38-04:00",
+    "results": [
+      {
+        "provider_id": "noaa_gfs",
+        "agency": "NOAA",
+        "model": "GFS",
+        "forecast_high_c": 29.1,
+        "error_c": 0.1,
+        "absolute_error_c": 0.1,
+        "rating": "Excellent",
+        "rank": 1
+      },
+      {
+        "provider_id": "open_meteo_best_match",
+        "agency": "Open-Meteo",
+        "model": "Best Match",
+        "forecast_high_c": 29.1,
+        "error_c": 0.1,
+        "absolute_error_c": 0.1,
+        "rating": "Excellent",
+        "rank": 1
+      },
+      {
+        "provider_id": "eccc_gem",
+        "agency": "Environment and Climate Change Canada",
+        "model": "GEM Seamless",
+        "forecast_high_c": 29.2,
+        "error_c": 0.2,
+        "absolute_error_c": 0.2,
+        "rating": "Excellent",
+        "rank": 3
+      },
+      {
+        "provider_id": "meteofrance_arpege",
+        "agency": "Météo-France",
+        "model": "ARPEGE World",
+        "forecast_high_c": 29.6,
+        "error_c": 0.6,
+        "absolute_error_c": 0.6,
+        "rating": "Very good",
+        "rank": 4
+      },
+      {
+        "provider_id": "dwd_icon",
+        "agency": "Deutscher Wetterdienst",
+        "model": "ICON Global",
+        "forecast_high_c": 28.3,
+        "error_c": -0.7,
+        "absolute_error_c": 0.7,
+        "rating": "Very good",
+        "rank": 5
+      },
+      {
+        "provider_id": "ecmwf_ifs",
+        "agency": "ECMWF",
+        "model": "IFS",
+        "forecast_high_c": 27.2,
+        "error_c": -1.8,
+        "absolute_error_c": 1.8,
+        "rating": "Good",
+        "rank": 6
+      },
+      {
+        "provider_id": "jma_gsm",
+        "agency": "Japan Meteorological Agency",
+        "model": "GSM",
+        "forecast_high_c": 24.8,
+        "error_c": -4.2,
+        "absolute_error_c": 4.2,
+        "rating": "Poor",
+        "rank": 7
+      }
+    ],
+    "unavailable_models": []
   }
 ]
