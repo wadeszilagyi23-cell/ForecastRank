@@ -2,9 +2,27 @@ name: Update and Deploy ForecastRank
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "Manual action"
+        required: true
+        default: "validate-public-source"
+        type: choice
+        options:
+          - validate-public-source
+          - verify-only
+          - capture-4pm
 
   schedule:
+    # Verification-only run. Keeps the existing site current even though
+    # forecasts themselves are now captured later in the day.
     - cron: "17 12 * * *"
+      timezone: "America/Toronto"
+
+    # Three chances to obtain the standardized 4 p.m. capture. The Python
+    # script never overwrites a successful V2 capture, so the earliest
+    # successful result is retained and later runs only fill missing sources.
+    - cron: "7,22,37 16 * * *"
       timezone: "America/Toronto"
 
   push:
@@ -34,9 +52,17 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Update forecasts and verification
+      - name: Run ForecastRank update
         if: github.event_name != 'push'
-        run: python scripts/update_forecastrank.py
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            python scripts/update_forecastrank.py --mode "${{ inputs.mode }}"
+          elif [[ "${{ github.event.schedule }}" == "17 12 * * *" ]]; then
+            python scripts/update_forecastrank.py --mode verify-only
+          else
+            python scripts/update_forecastrank.py --mode capture-4pm
+          fi
 
       - name: Commit updated data
         if: github.event_name != 'push'
