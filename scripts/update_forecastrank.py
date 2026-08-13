@@ -265,7 +265,12 @@ def parse_datetime_element(element: ET.Element | None) -> str | None:
     except ValueError:
         return None
 
-    return parsed.isoformat(timespec="seconds")
+    # Normalize Environment Canada's forecast issue timestamp to the
+    # ForecastRank location's local timezone. The source XML can express the
+    # issue time in UTC; storing it in America/Toronto makes the audit record
+    # immediately understandable and automatically handles EDT/EST.
+    parsed_local = parsed.astimezone(TORONTO_TZ)
+    return parsed_local.isoformat(timespec="seconds")
 
 
 def forecast_url(provider: Provider) -> str:
@@ -1002,7 +1007,16 @@ def run_validation(now_local: datetime) -> int:
     log(f"Target date: {target_date.isoformat()}")
     log(f"Forecast period: {public['period_name']}")
     log(f"Published maximum: {public['forecast_high_c']:.1f}°C")
-    log(f"Forecast issue time: {public.get('forecast_issue_time') or 'not parsed'}")
+    issue_time = public.get("forecast_issue_time")
+    if issue_time:
+        try:
+            issue_dt = datetime.fromisoformat(issue_time)
+            readable_issue = issue_dt.strftime("%Y-%m-%d %-I:%M %p %Z")
+        except (TypeError, ValueError):
+            readable_issue = issue_time
+    else:
+        readable_issue = "not parsed"
+    log(f"Forecast issue time: {readable_issue}")
     log(f"Source file: {public['source_url']}")
     return 0
 
