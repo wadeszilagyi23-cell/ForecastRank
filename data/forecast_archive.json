@@ -1673,9 +1673,93 @@
         }
       ],
       "public_unavailable": []
+    },
+    "2026-08-18": {
+      "target_date": "2026-08-18",
+      "forecast_capture_date": "2026-08-17",
+      "captured_at": "2026-08-17T16:32:17-04:00",
+      "lead_definition": "Following local calendar day (Day-1), standardized 4:00 p.m. local-time capture",
+      "capture_methodology": "day1_1600_local_v2",
+      "capture_target_local_time": "16:00",
+      "providers": [
+        {
+          "provider_id": "open_meteo_best_match",
+          "provider_type": "numerical_model",
+          "agency": "Open-Meteo",
+          "model": "Best Match",
+          "forecast_high_c": 28.2,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "eccc_gem",
+          "provider_type": "numerical_model",
+          "agency": "Environment and Climate Change Canada",
+          "model": "GEM Seamless",
+          "forecast_high_c": 27.6,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "noaa_gfs",
+          "provider_type": "numerical_model",
+          "agency": "NOAA",
+          "model": "GFS",
+          "forecast_high_c": 28.2,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "ecmwf_ifs",
+          "provider_type": "numerical_model",
+          "agency": "ECMWF",
+          "model": "IFS",
+          "forecast_high_c": 26.8,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "dwd_icon",
+          "provider_type": "numerical_model",
+          "agency": "Deutscher Wetterdienst",
+          "model": "ICON Global",
+          "forecast_high_c": 27.0,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "meteofrance_arpege",
+          "provider_type": "numerical_model",
+          "agency": "Météo-France",
+          "model": "ARPEGE World",
+          "forecast_high_c": 28.7,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        },
+        {
+          "provider_id": "jma_gsm",
+          "provider_type": "numerical_model",
+          "agency": "Japan Meteorological Agency",
+          "model": "GSM",
+          "forecast_high_c": 23.1,
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        }
+      ],
+      "unavailable": [],
+      "public_forecasts": [
+        {
+          "provider_id": "eccc_public",
+          "provider_type": "public_forecast",
+          "agency": "Environment and Climate Change Canada",
+          "product": "Official City Forecast",
+          "forecast_location": "Toronto",
+          "site_code": "s0000458",
+          "valid_date": "2026-08-18",
+          "period_name": "Tuesday",
+          "forecast_high_c": 27.0,
+          "forecast_issue_time": "2026-08-17T15:30:00-04:00",
+          "source_url": "https://dd.weather.gc.ca/today/citypage_weather/ON/20/20260817T200117.938Z_MSC_CitypageWeather_s0000458_en.xml",
+          "captured_at": "2026-08-17T16:32:17-04:00"
+        }
+      ],
+      "public_unavailable": []
     }
   },
-  "last_capture_at": "2026-08-16T16:49:22-04:00",
+  "last_capture_at": "2026-08-17T16:32:17-04:00",
   "current_capture_methodology": "day1_1600_local_v2",
   "capture_target_local_time": "16:00"
 }
