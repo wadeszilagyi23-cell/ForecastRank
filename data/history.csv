@@ -230,3 +230,10 @@ verification_date,location,station_code,actual_high_c,provider_id,agency,model,f
 2026-08-20,Toronto Pearson International Airport,YYZ,24.9,dwd_icon,Deutscher Wetterdienst,ICON Global,25.6,0.7,0.7,Very good,5,2026-08-19T16:34:13-04:00,day1_1600_local_v2,2026-08-21T12:51:37-04:00
 2026-08-20,Toronto Pearson International Airport,YYZ,24.9,eccc_gem,Environment and Climate Change Canada,GEM Seamless,26.2,1.3,1.3,Good,6,2026-08-19T16:34:13-04:00,day1_1600_local_v2,2026-08-21T12:51:37-04:00
 2026-08-20,Toronto Pearson International Airport,YYZ,24.9,jma_gsm,Japan Meteorological Agency,GSM,21.1,-3.8,3.8,Poor,7,2026-08-19T16:34:13-04:00,day1_1600_local_v2,2026-08-21T12:51:37-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,meteofrance_arpege,Météo-France,ARPEGE World,25.5,0.3,0.3,Excellent,1,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,noaa_gfs,NOAA,GFS,24.9,-0.3,0.3,Excellent,1,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,open_meteo_best_match,Open-Meteo,Best Match,24.9,-0.3,0.3,Excellent,1,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,dwd_icon,Deutscher Wetterdienst,ICON Global,24.7,-0.5,0.5,Excellent,4,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,eccc_gem,Environment and Climate Change Canada,GEM Seamless,25.8,0.6,0.6,Very good,5,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,ecmwf_ifs,ECMWF,IFS,25.9,0.7,0.7,Very good,6,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
+2026-08-21,Toronto Pearson International Airport,YYZ,25.2,jma_gsm,Japan Meteorological Agency,GSM,20.1,-5.1,5.1,Poor,7,2026-08-20T16:34:36-04:00,day1_1600_local_v2,2026-08-22T12:41:20-04:00
