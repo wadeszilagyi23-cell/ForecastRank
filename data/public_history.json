@@ -349,5 +349,44 @@
       }
     ],
     "unavailable_public_forecasts": []
+  },
+  {
+    "status": "ready",
+    "location": {
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "province": "Ontario",
+      "country": "Canada",
+      "climate_identifier": "6158731",
+      "station_code": "YYZ",
+      "latitude": 43.677,
+      "longitude": -79.631
+    },
+    "verification_date": "2026-08-23",
+    "actual_high_c": 20.7,
+    "forecast_capture_date": "2026-08-22",
+    "forecast_captured_at": "2026-08-22T16:28:52-04:00",
+    "capture_methodology": "day1_1600_local_v2",
+    "capture_target_local_time": "16:00",
+    "published_at": "2026-08-24T12:55:48-04:00",
+    "results": [
+      {
+        "provider_id": "eccc_public",
+        "provider_type": "public_forecast",
+        "agency": "Environment and Climate Change Canada",
+        "product": "Official City Forecast",
+        "forecast_location": "Toronto",
+        "period_name": "Sunday",
+        "forecast_high_c": 21.0,
+        "error_c": 0.3,
+        "absolute_error_c": 0.3,
+        "rating": "Excellent",
+        "forecast_issue_time": "2026-08-22T15:30:00-04:00",
+        "captured_at": "2026-08-22T16:28:52-04:00",
+        "source_url": "https://dd.weather.gc.ca/today/citypage_weather/ON/20/20260822T202557.148Z_MSC_CitypageWeather_s0000458_en.xml",
+        "rank": 1
+      }
+    ],
+    "unavailable_public_forecasts": []
   }
 ]
