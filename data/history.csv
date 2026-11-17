@@ -482,3 +482,10 @@ verification_date,location,station_code,actual_high_c,provider_id,agency,model,f
 2026-11-15,Toronto Pearson International Airport,YYZ,8.4,dwd_icon,Deutscher Wetterdienst,ICON Global,6.1,-2.3,2.3,Fair,5,2026-11-14T16:10:39-05:00,day1_1600_local_v2,2026-11-16T12:21:07-05:00
 2026-11-15,Toronto Pearson International Airport,YYZ,8.4,meteofrance_arpege,Météo-France,ARPEGE World,6.0,-2.4,2.4,Fair,6,2026-11-14T16:10:39-05:00,day1_1600_local_v2,2026-11-16T12:21:07-05:00
 2026-11-15,Toronto Pearson International Airport,YYZ,8.4,jma_gsm,Japan Meteorological Agency,GSM,5.9,-2.5,2.5,Fair,7,2026-11-14T16:10:39-05:00,day1_1600_local_v2,2026-11-16T12:21:07-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,noaa_gfs,NOAA,GFS,9.4,-0.8,0.8,Very good,1,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,open_meteo_best_match,Open-Meteo,Best Match,9.4,-0.8,0.8,Very good,1,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,eccc_gem,Environment and Climate Change Canada,GEM Seamless,9.3,-0.9,0.9,Very good,3,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,dwd_icon,Deutscher Wetterdienst,ICON Global,9.2,-1.0,1.0,Very good,4,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,ecmwf_ifs,ECMWF,IFS,8.8,-1.4,1.4,Good,5,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,meteofrance_arpege,Météo-France,ARPEGE World,8.2,-2.0,2.0,Good,6,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
+2026-11-16,Toronto Pearson International Airport,YYZ,10.2,jma_gsm,Japan Meteorological Agency,GSM,7.0,-3.2,3.2,Poor,7,2026-11-15T16:10:47-05:00,day1_1600_local_v2,2026-11-17T12:20:14-05:00
