@@ -1792,5 +1792,83 @@
       }
     ],
     "unavailable_public_forecasts": []
+  },
+  {
+    "status": "ready",
+    "location": {
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "province": "Ontario",
+      "country": "Canada",
+      "climate_identifier": "6158731",
+      "station_code": "YYZ",
+      "latitude": 43.677,
+      "longitude": -79.631
+    },
+    "verification_date": "2026-11-19",
+    "actual_high_c": 18.1,
+    "forecast_capture_date": "2026-11-18",
+    "forecast_captured_at": "2026-11-18T16:11:37-05:00",
+    "capture_methodology": "day1_1600_local_v2",
+    "capture_target_local_time": "16:00",
+    "published_at": "2026-11-21T12:20:31-05:00",
+    "results": [
+      {
+        "provider_id": "eccc_public",
+        "provider_type": "public_forecast",
+        "agency": "Environment and Climate Change Canada",
+        "product": "Official City Forecast",
+        "forecast_location": "Toronto",
+        "period_name": "Thursday",
+        "forecast_high_c": 15.0,
+        "error_c": -3.1,
+        "absolute_error_c": 3.1,
+        "rating": "Poor",
+        "forecast_issue_time": "2026-11-18T15:30:00-05:00",
+        "captured_at": "2026-11-18T16:11:37-05:00",
+        "source_url": "https://dd.weather.gc.ca/today/citypage_weather/ON/21/20261118T210141.374Z_MSC_CitypageWeather_s0000458_en.xml",
+        "rank": 1
+      }
+    ],
+    "unavailable_public_forecasts": []
+  },
+  {
+    "status": "ready",
+    "location": {
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "province": "Ontario",
+      "country": "Canada",
+      "climate_identifier": "6158731",
+      "station_code": "YYZ",
+      "latitude": 43.677,
+      "longitude": -79.631
+    },
+    "verification_date": "2026-11-20",
+    "actual_high_c": 16.1,
+    "forecast_capture_date": "2026-11-19",
+    "forecast_captured_at": "2026-11-19T16:11:50-05:00",
+    "capture_methodology": "day1_1600_local_v2",
+    "capture_target_local_time": "16:00",
+    "published_at": "2026-11-21T12:20:31-05:00",
+    "results": [
+      {
+        "provider_id": "eccc_public",
+        "provider_type": "public_forecast",
+        "agency": "Environment and Climate Change Canada",
+        "product": "Official City Forecast",
+        "forecast_location": "Toronto",
+        "period_name": "Friday",
+        "forecast_high_c": 15.0,
+        "error_c": -1.1,
+        "absolute_error_c": 1.1,
+        "rating": "Good",
+        "forecast_issue_time": "2026-11-19T15:30:00-05:00",
+        "captured_at": "2026-11-19T16:11:50-05:00",
+        "source_url": "https://dd.weather.gc.ca/today/citypage_weather/ON/21/20261119T210114.182Z_MSC_CitypageWeather_s0000458_en.xml",
+        "rank": 1
+      }
+    ],
+    "unavailable_public_forecasts": []
   }
 ]
